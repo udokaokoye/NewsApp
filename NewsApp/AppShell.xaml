@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    
+<Shell
+    x:Class="NewsApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:NewsApp.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Title="NewsApp">
+
+
+    <ShellContent
+     Title="NewsHomePage"
+     ContentTemplate="{DataTemplate local:NewsHomePage}"
+     Route="NewsHomePage" />
+
+    <ShellContent
+     Title="NewsListPage"
+     ContentTemplate="{DataTemplate local:NewsListPage}"
+     Route="NewsListPage" />
+
+    <ShellContent
+     Title="NewsDetailPage"
+     ContentTemplate="{DataTemplate local:NewsDetailPage}"
+     Route="NewsDetailPage" />
+
+</Shell>

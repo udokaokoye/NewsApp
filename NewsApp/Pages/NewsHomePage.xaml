@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NewsApp.Pages.NewsHomePage"
+             Title="NewsHomePage">
+    <Grid RowDefinitions="Auto, Auto, *">
+        <Label Grid.Row="0"
+               Text="News Pilot"
+               FontSize="Title"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Padding="20"/>
+        <CollectionView Grid.Row="1"
+                        Margin= "5"
+                        x:Name="CvCategories"
+                        HeightRequest="100"
+                        SelectionMode="Single"
+                        SelectionChanged="CvCategories_SelectionChanged"
+                        >
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="20"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="10" WidthRequest="150">
+                        <VerticalStackLayout Padding="0" Spacing="0" VerticalOptions="Center">
+                            <Image HeightRequest="50" Aspect="AspectFit" Source="{Binding ImageUrl}"/>
+                            <Label FontSize="Medium" HorizontalOptions="Center" Text="{Binding Name}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <CollectionView Grid.Row="2"
+                Margin= "5"
+                x:Name="CvNews"
+                SelectionMode="Single">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="15"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="5" Margin="5">
+                        <VerticalStackLayout Padding="10" Spacing="0" VerticalOptions="Center">
+                            <Image HeightRequest="200" Aspect="Fill" Source="{Binding Image}"/>
+                            <Label FontSize="Medium" Text="{Binding Title}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+</ContentPage>
